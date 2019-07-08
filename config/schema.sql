@@ -13,7 +13,8 @@ CREATE TABLE userinfo(
 
 CREATE TABLE user_favs(
     userid INTEGER AUTO_INCREMENT,
-    zip_codes INTEGER(5) not null,
+    cities VARCHAR(255) not null,
 	categories VARCHAR(255) not null,
+    promotions_type VARCHAR(255) not null,
     PRIMARY KEY(userid)
 );
