@@ -11,3 +11,10 @@ CREATE TABLE userinfo(
     zip_code INTEGER(5) not null,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE user_favs(
+    userid INTEGER AUTO_INCREMENT,
+    zip_codes INTEGER(5) not null,
+	categories VARCHAR(255) not null,
+    PRIMARY KEY(userid)
+);
