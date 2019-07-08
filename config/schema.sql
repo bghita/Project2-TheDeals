@@ -1,7 +1,6 @@
-DROP DATABASE IF EXISTS userinfo_db;
-CREATE DATABASE userinfo_db;
-
-USE userinfo_db;
+DROP DATABASE IF EXISTS deals_db;
+CREATE DATABASE deals_db;
+USE deals_db;
 
 CREATE TABLE userinfo(
     id INTEGER AUTO_INCREMENT,
