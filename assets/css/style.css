@@ -56,3 +56,11 @@
     box-shadow: 0 0 8px 3px rgb(196, 232, 235);
     font-size: 12px;
 }
+.navbar {
+    width:760px;
+    margin-left:175px;
+}
+#navL {
+    color:white;
+    font-family: 'Questrial', sans-serif;
+}
