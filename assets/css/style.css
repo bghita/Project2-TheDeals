@@ -14,15 +14,13 @@
 }
 
 .img {
-    height: 300px;
-    width: 760px;
-    margin-left: 190px;
+    margin-left: 180px;
 }
 
 #main {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
-    height: 200px;
+    height: 260px;
     color:rgb(28, 184, 67);
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.39);
@@ -41,6 +39,7 @@
 }
 
 #couponBox {
+    margin-left:5px;
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
     height: 400px;
