@@ -14,9 +14,13 @@
 }
 
 .img {
+<<<<<<< HEAD:public/assets/css/style.css
     height: 300px;
     width: 760px;
     margin-left: 190px;
+=======
+    margin-left: 160px;
+>>>>>>> a86d7ce7077258351e8627553d009cdd0e800a02:public/assets/css/style.css
 }
 
 #main {
