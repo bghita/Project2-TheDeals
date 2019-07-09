@@ -92,6 +92,13 @@ function cities() {
         return response;
     })
 }
+//login page functions
+    //display username after login
+    //display local deals(10)
+
+//signup page functions
+    //cities dropdown
+    //submit button function
 
 //make selection a variable
 
