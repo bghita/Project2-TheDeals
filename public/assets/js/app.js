@@ -82,7 +82,7 @@ function categories() {
     })
 }
     
-    
+//when client selects city option on index.html    
 $('#cities-list').on('click', cities())
 
 function cities() {
