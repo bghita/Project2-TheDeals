@@ -18,8 +18,8 @@ const couponFeed = {
     coupons: (req, res) => {
     // 
         // req.body
-
-        axios.get(`https://partner-api.groupon.com/deals.json?division_id=${req.body.grouponCity}&filters=category:${req.body.grouponCats}&offset=0&limit=50&country_code=US&tsToken=${process.env.TOKEN}&utm_source=GPN&utm_medium=afl&utm_campaign=ryan`)
+        // field name in HTML needs to match fill ins below:
+        axios.get(`https://partner-api.groupon.com/deals.json?division_id=${req.body.grouponCity}&filters=category:${req.body.grouponCats}&offset=0&limit=50&country_code=US&tsToken=${process.env.TOKEN}`)
         .then(function (response) {
             // handle success
             console.log(response);
