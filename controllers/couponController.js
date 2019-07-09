@@ -1,14 +1,17 @@
 const axios = require('axios');
-const $ = require('jquery');
+// const $ = require('jquery');
 
 // This function lists the cities available for Groupon deals, for use in dropdown/selectors
-module.exports = {
-    cities: () => {
+const couponFeed = {
+    cities: (req, res) => {
         axios.get('https://partner-api.groupon.com/division.json')
             .then(function(response) {
+                let data=[];
                 response.data.divisions.forEach((name) => {
-                    $('.city-dropdown').text(name.name)
+                    //$('.city-dropdown').text(name.name)
+                    data.push(name.name);
                 })
+                res.json( data)
             })
         },
 // $('.city-dropdown').on('click', cities())
@@ -86,12 +89,15 @@ module.exports = {
     ],
 
     // if("Local")  
-    coupons: () => {
+    coupons: (req, res) => {
     // 
-        axios.get(`https://partner-api.groupon.com/deals?location`)
+        // req.body
+
+        axios.get(`https://partner-api.groupon.com/deals.json?sid=SubAff123456&country_code=US&utm_source=GPN&utm_medium=afl&utm_campaign=201236&tsToken=${process.env.TOKEN}`)
         .then(function (response) {
             // handle success
             console.log(response);
+            res.json(response)
         })
         .catch(function (error) {
             // handle error
@@ -101,6 +107,10 @@ module.exports = {
             // always executed
         })
     }
+    // radius: needed as number input option in miles between 1 - 100, default is 10.
 }
 
 // $('.deals').on('click', coupons())
+
+
+module.exports = couponFeed;
