@@ -38,39 +38,52 @@
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.39);
     font-family: 'Questrial', sans-serif;
+    margin-left: 10px;
 }
 
 #couponBox {
-    margin-left:5px;
+    margin-left:12px;
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
     height: 400px;
     background-color: rgba(0, 0, 0, 0.39);
-    max-width: 555px;
+    max-width: 540px;
 }
 
 .mainCoupons {
     font-family: 'Rock Salt', cursive;
     color:rgb(248, 138, 11);
     font-size: 20px;
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 #footing {
     box-shadow: 0 0 8px 3px rgb(196, 232, 235);
     font-size: 12px;
 }
+
 .navbar {
     width:760px;
     margin-left:175px;
 }
+
 #navL {
     color:white;
     font-family: 'Questrial', sans-serif;
 }
+
 .star {
     color: rgb(19, 219, 19);
 }
+
 .userName {
     font-family: 'Questrial', sans-serif;
 
+}
+
+.btn-secondary {
+    margin-top: 10px;
+    margin-right: 60px;
 }
