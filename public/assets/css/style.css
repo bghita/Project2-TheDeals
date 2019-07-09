@@ -13,9 +13,7 @@
     height: 200vh;
 }
 
-.img {
-    margin-left: 160px;
-}
+
 
 #main {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
@@ -38,16 +36,13 @@
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.39);
     font-family: 'Questrial', sans-serif;
-    margin-left: 10px;
 }
 
 #couponBox {
-    margin-left:12px;
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
     height: 400px;
     background-color: rgba(0, 0, 0, 0.39);
-    max-width: 540px;
 }
 
 .mainCoupons {
@@ -64,10 +59,6 @@
     font-size: 12px;
 }
 
-.navbar {
-    width:760px;
-    margin-left:175px;
-}
 
 #navL {
     color:white;
