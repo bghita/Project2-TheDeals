@@ -1,24 +1,19 @@
-var express = require("express");
+require('dotenv').config();
+const express = require('express');
 
-var app = express();
+const PORT = process.env.PORT || 5080;
+const app = express();
 
+app.use(express.urlencoded({extended: true}))
+// app.use(express.json())
 
-var PORT = process.env.PORT || 5080;
+// var exphbs = require("express-handlebars");
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
-var exphbs = require("express-handlebars");
+const routes = require('./routes');
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.use(routes);
 
-var mysql = require("mysql");
-
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "password",
-    database: "deals_db"
-});
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
