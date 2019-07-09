@@ -1,10 +1,10 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
-const apiRoutes = require('./api');
-//all of the routes have '/' prepended
 
-router.use('/api', apiRoutes);
+const api = require('./api');
 
-// router.get('/', (req,res) => res.send("Hello World!"));
+router.use(express.static(path.join(__dirname, "../public")))
+router.use('/api', api);
 
 module.exports = router;
