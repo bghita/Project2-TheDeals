@@ -29,6 +29,19 @@
     font-family: 'Homemade Apple', cursive;
 }
 
+#signBox {
+    box-shadow: 0 0 8px 3px rgb(223, 243, 245);
+    background-color: rgba(255, 255, 255, 0.671);
+    height: 720px;
+    color:rgb(28, 184, 67);
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.39);
+}
+
+.btn-primary {
+    float: right;
+}
+
 #user {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
@@ -51,6 +64,9 @@
     font-family: 'Rock Salt', cursive;
 }
 
+.form-group {
+    font-family: 'Questrial', sans-serif;
+}
 
 #footing {
     box-shadow: 0 0 8px 3px rgb(196, 232, 235);
