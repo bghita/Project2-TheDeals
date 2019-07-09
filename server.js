@@ -5,12 +5,12 @@ const PORT = process.env.PORT || 5080;
 const app = express();
 
 app.use(express.urlencoded({extended: true}))
-app.use(express.json())
+// app.use(express.json())
 
-var exphbs = require("express-handlebars");
+// var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
 const routes = require('./routes');
 
