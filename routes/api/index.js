@@ -4,7 +4,12 @@ const router = express.Router();
 const couponRoutes = require('./coupons.js');
 // Has /api/ prepended to all of its routes
 
+const authRoutes = require('./authroutes');
+
 router.use('/coupons', couponRoutes);
+
+router.use('/auth', authRoutes);
+
 
 
 // router.route('/')

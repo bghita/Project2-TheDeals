@@ -4,10 +4,10 @@ USE deals_db;
 
 CREATE TABLE userinfo(
     id INTEGER AUTO_INCREMENT,
-    user_name VARCHAR(255) not null,
-    email VARCHAR(255) not null,
+    user_name VARCHAR(255) not null UNIQUE,
+    email VARCHAR(255) not null UNIQUE,
     password VARCHAR(255) not null,
-    zip_code INTEGER(5) not null,
+    city VARCHAR(255) not null,
     PRIMARY KEY(id)
 );
 
