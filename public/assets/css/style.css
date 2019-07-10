@@ -13,6 +13,7 @@
     height: 200vh;
 }
 
+<<<<<<< HEAD
 .img {
 <<<<<<< HEAD:public/assets/css/style.css
     height: 300px;
@@ -23,6 +24,8 @@
 >>>>>>> a86d7ce7077258351e8627553d009cdd0e800a02:public/assets/css/style.css
 }
 
+=======
+>>>>>>> 76937ea40eaeb40c8cb22383d135f2bebbbfaede
 #main {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
@@ -38,12 +41,17 @@
     background-color: rgba(255, 255, 255, 0.671);
     height: 720px;
     color:rgb(28, 184, 67);
+<<<<<<< HEAD
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.39);
 }
 
 .btn-primary {
     float: right;
+=======
+    font-size: 24px;
+    font-family: 'Homemade Apple', cursive;
+>>>>>>> 76937ea40eaeb40c8cb22383d135f2bebbbfaede
 }
 
 #user {
@@ -52,7 +60,6 @@
     height: 400px;
     color:white;
     font-size: 20px;
-    margin-right:15px;
     background-color: rgba(0, 0, 0, 0.39);
     font-family: 'Questrial', sans-serif;
 }
@@ -63,6 +70,7 @@
     height: 400px;
     color:rgb(248, 138, 11);
     background-color: rgba(0, 0, 0, 0.39);
+<<<<<<< HEAD
     max-width: 555px;
     font-size: 20px;
     font-family: 'Rock Salt', cursive;
@@ -70,9 +78,43 @@
 
 .form-group {
     font-family: 'Questrial', sans-serif;
+=======
+}
+
+.mainCoupons {
+    font-family: 'Rock Salt', cursive;
+    color:rgb(248, 138, 11);
+    font-size: 20px;
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+>>>>>>> 76937ea40eaeb40c8cb22383d135f2bebbbfaede
 }
 
 #footing {
     box-shadow: 0 0 8px 3px rgb(196, 232, 235);
     font-size: 12px;
+<<<<<<< HEAD
+=======
+}
+
+
+#navL {
+    color:white;
+    font-family: 'Questrial', sans-serif;
+}
+
+.star {
+    color: rgb(19, 219, 19);
+}
+
+.userName {
+    font-family: 'Questrial', sans-serif;
+
+}
+
+.btn-secondary {
+    margin-top: 10px;
+    margin-right: 60px;
+>>>>>>> 76937ea40eaeb40c8cb22383d135f2bebbbfaede
 }
