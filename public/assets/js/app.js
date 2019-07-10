@@ -1,7 +1,7 @@
 // let grouponCity = "san-francisco";
 // let grouponCat = "Local";
 
-const categories = [
+const categoryList = [
     {
         name: "Local",
         subcat_name: [
@@ -73,7 +73,7 @@ const categories = [
     }
 ]
 
-//needs directing... VVVVV
+//needs directing -- attr('data-content',___)... VVVVV
 function categories() {
     $.ajax({
         url: "/api/coupons/categories"
@@ -81,17 +81,29 @@ function categories() {
         return response;
     })
 }
-    
-//when client selects city option on index.html    
-$('#cities-list').on('click', cities())
+        
+$('#city-selector').change(cities()) 
 
 function cities() {
-   $.ajax({
-        url: "/api/coupons/cities"
+    $.ajax({
+        url: "/api/coupons/cities",
     }).then( response => {
-        return response;
+        // console.log(response);
+        response.forEach( city => $('#city-selector').append($('<option>').text(city)))
     })
 }
+
+$('#city-select').change(city()) 
+
+function city() {
+    $.ajax({
+        url: "/api/coupons/cities",
+    }).then( response => {
+        // console.log(response);
+        response.forEach( city => $('#city-select').append($('<a>').text(city)))
+    })
+}
+        
 //login page functions
     //display username after login
     //display local deals(10)
