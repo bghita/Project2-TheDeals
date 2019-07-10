@@ -73,7 +73,7 @@ const categories = [
     }
 ]
 
-//needs directing... VVVVV
+//needs directing -- attr('data-content',___)... VVVVV
 function categories() {
     $.ajax({
         url: "/api/coupons/categories"
@@ -82,16 +82,25 @@ function categories() {
     })
 }
     
-    
-$('#cities-list').on('click', cities())
+//when client selects city option on index.html    
+$('#city-selector').change(cities()) 
+
 
 function cities() {
-   $.ajax({
-        url: "/api/coupons/cities"
+    $.ajax({
+        url: "/api/coupons/cities",
     }).then( response => {
         return response;
     })
 }
+
+//login page functions
+    //display username after login
+    //display local deals(10)
+
+//signup page functions
+    //cities dropdown
+    //submit button function
 
 //make selection a variable
 
