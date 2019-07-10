@@ -15,13 +15,9 @@
 
 <<<<<<< HEAD
 .img {
-<<<<<<< HEAD:public/assets/css/style.css
     height: 300px;
     width: 760px;
     margin-left: 190px;
-=======
-    margin-left: 160px;
->>>>>>> a86d7ce7077258351e8627553d009cdd0e800a02:public/assets/css/style.css
 }
 
 =======
@@ -39,7 +35,7 @@
 #signBox {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
-    height: 720px;
+    height: 680px;
     color:rgb(28, 184, 67);
 <<<<<<< HEAD
     font-size: 20px;
