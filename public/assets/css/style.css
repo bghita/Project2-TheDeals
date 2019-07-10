@@ -1,3 +1,6 @@
+html{
+    padding: 0px; 
+}
 #head {
     font-family: 'Teko', sans-serif;
     font-size: 140px;
@@ -13,20 +16,19 @@
     height: 200vh;
 }
 
-.img {
-    height: 300px;
-    width: 760px;
-    margin-left: 190px;
-}
-
 #main {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
-    height: 200px;
     color:rgb(28, 184, 67);
-    font-size: 20px;
+    font-size: 24px;
     background-color: rgba(0, 0, 0, 0.39);
     font-family: 'Homemade Apple', cursive;
+}
+
+.deals {
+    text-align: center;
+    font-size: 29px;
+    margin-bottom: 0px;
 }
 
 #signBox {
@@ -34,12 +36,8 @@
     background-color: rgba(255, 255, 255, 0.671);
     height: 680px;
     color:rgb(28, 184, 67);
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.39);
-}
-
-.btn-primary {
-    float: right;
+    font-size: 24px;
+    font-family: 'Homemade Apple', cursive;
 }
 
 #user {
@@ -55,19 +53,43 @@
 #couponBox {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
-    height: 400px;
-    color:rgb(248, 138, 11);
+    height: 500px;
     background-color: rgba(0, 0, 0, 0.39);
-    max-width: 555px;
-    font-size: 20px;
-    font-family: 'Rock Salt', cursive;
 }
 
-.form-group {
-    font-family: 'Questrial', sans-serif;
+.mainCoupons {
+    font-family: 'Rock Salt', cursive;
+    color:rgb(248, 138, 11);
+    font-size: 20px;
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 #footing {
     box-shadow: 0 0 8px 3px rgb(196, 232, 235);
     font-size: 12px;
+}
+
+
+#navL {
+    color:white;
+    font-family: 'Questrial', sans-serif;
+}
+
+.star {
+    color: rgb(19, 219, 19);
+}
+
+.userName {
+    font-family: 'Questrial', sans-serif;
+
+}
+
+.btn-secondary {
+    margin-top: 10px;
+    margin-right: 60px;
+}
+.dropdown {
+    float:right;
 }
