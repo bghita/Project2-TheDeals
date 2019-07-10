@@ -90,7 +90,11 @@ function cities() {
     $.ajax({
         url: "/api/coupons/cities",
     }).then( response => {
-        return response;
+        let option = $('<option>');
+        response.forEach((city) => {
+            option.text(city);
+            $('#city-selector').append(option);
+        })
     })
 }
 

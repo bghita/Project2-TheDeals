@@ -5,23 +5,23 @@ const couponFeed = {
     cities: (req, res) => {
         axios.get('https://partner-api.groupon.com/division.json')
             .then(function(response) {
-                let data=[];
+                let cities=[];
                 response.data.divisions.forEach((each) => {
                     //$('.city-dropdown').text(name.name)
-                    data.push(each.name);
+                    cities.push(each.name);
                 })
-                res.json( data)
+                res.json( cities)
             })
         },
     citiesID: (req, res) => {
         axios.get('https://partner-api.groupon.com/division.json')
             .then(function(response) {
-                let data=[];
+                let cityId=[];
                 response.data.divisions.forEach((each) => {
                     //$('.city-dropdown').text(name.name)
-                    data.push(each.id);
+                    cityId.push(each.id);
                 })
-                res.json( data)
+                res.json( cityId)
             })
         },
 
