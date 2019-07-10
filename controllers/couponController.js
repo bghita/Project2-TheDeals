@@ -1,4 +1,5 @@
 const axios = require('axios');
+const categoryList = require('./categories')
 
 // This function lists the cities available for Groupon deals, for use in dropdown/selectors
 const couponFeed = {
@@ -74,7 +75,8 @@ const couponFeed = {
             // .finally(function () {
             //     // always executed
             // })
-        }
+        },
+    categoryList: (req, res) => res.json(categoryList)
 }
 
 
