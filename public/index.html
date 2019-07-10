@@ -17,15 +17,31 @@
 
 <body>
     <!-- Sign Up NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" id="navL">
             <button type="button" class="btn btn-outline-success">Sign Up</button>
         </a>
-        <form class="form-inline ml-auto">
+        <form class="form-inline ml-auto ">
             <input class="form-control" type="email" placeholder="email@example.com" aria-label="Search">
             <input class="form-control" type="password" placeholder="Password" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Log in</button>
         </form>
+    </nav> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-dark sticky-top">
+        <a class="navbar-brand" id="navL">
+            <button type="button" class="btn btn-outline-success">Sign Up</button>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <form class="form-inline ml-auto ">
+                <input class="form-control" type="email" placeholder="email@example.com" aria-label="Search">
+                <input class="form-control" type="password" placeholder="Password" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Log in</button>
+            </form>
+        </div>
     </nav>
     <!-- Main Container -->
     <div class="container-fluid background">
@@ -94,71 +110,81 @@
         </div>
         <br>
         <!-- Username box -->
-                        <!-- <p class="userName">USERNAME</p>
+        <!-- <p class="userName">USERNAME</p>
                         <div class="star">
                             <button type="button" class="btn btn-outline-success">
                                 <ion-icon name="star-outline"></ion-icon>Favorites
                             </button> -->
-                        
-                    <!-- Coupons Near Me -->
-                    <div class="col-md-6 offset-md-3" id="couponBox">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p class="mainCoupons">Coupons Near Me!</p>
-                            </div>
-                            <!-- Location Button -->
-                            <div class="col-sm-6">
-                                <div class="dropdown">
-                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
-                                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <ion-icon name="locate"></ion-icon>Location
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Hayward, CA</a>
-                                        <a class="dropdown-item" href="#">Berkeley, CA</a>
-                                        <a class="dropdown-item" href="#">San Fransisco, CA</a>
-                                    </div>
-                                </div>
+
+        <!-- Coupons Near Me -->
+        <div class="col-md-6 offset-md-3 overflow-auto" id="couponBox">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p class="mainCoupons">Coupons Near Me!</p>
+                </div>
+                <!-- Location Button -->
+                <div class="col-sm-6">
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <ion-icon name="locate"></ion-icon>Location
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Hayward, CA</a>
+                            <a class="dropdown-item" href="#">Berkeley, CA</a>
+                            <a class="dropdown-item" href="#">San Fransisco, CA</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Coupon Search Box -->
+            <div class="row" style="border:padding 2%;">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="card col-md-10 offset-md-1">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Example</p>
                             </div>
                         </div>
-                        <!-- Coupon Search Box -->
-                        <div style="height:400px;width:710px;overflow:auto;border:padding 2%">
-                            <div class="card" style="width: 43rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Example</p>
-                                </div>
+                    </div>
+                    <div class="row">
+                        <div class="card col-md-10 offset-md-1">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Example</p>
                             </div>
-                            <div class="card" style="width: 43rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Example</p>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card col-md-10 offset-md-1">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Example</p>
                             </div>
-                            <div class="card" style="width: 43rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Example</p>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card col-md-10 offset-md-1">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Example</p>
                             </div>
-                            <div class="card" style="width: 43rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Example</p>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card col-md-10 offset-md-1">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Example</p>
                             </div>
-                            <div class="card" style="width: 43rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Example</p>
-                                </div>
-                            </div>
-                            <div class="card" style="width: 43rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <p class="card-text">Example</p>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card col-md-10 offset-md-1">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Example</p>
                             </div>
                         </div>
                     </div>
@@ -167,12 +193,12 @@
         </div>
     </div>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-bottom ">
+        <p class="mx-auto " style="color:turquoise ">@CopyRight@</p>>
+    </nav>
+    </div>
 
-        <!-- <div class="row sticky-bottom">
-                <div class="col-sm-12 col-xs-12 col-md-12" id="footing">
-                    <p>dfd</p>
-                </div>
-            </div> -->
+
 
     <!-- Javascript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
