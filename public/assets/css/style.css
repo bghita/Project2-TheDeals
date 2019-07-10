@@ -1,6 +1,4 @@
-html{
-    padding: 0px; 
-}
+
 #head {
     font-family: 'Teko', sans-serif;
     font-size: 140px;
@@ -15,7 +13,6 @@ html{
     background-size: cover;
     height: 200vh;
 }
-
 
 #main {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
@@ -34,11 +31,17 @@ html{
 
 #signBox {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
-    background-color: rgba(255, 255, 255, 0.671);
-    height: 720px;
+    background-color: rgba(0, 0, 0, 0.39);
+    height: 647px;
     color:rgb(28, 184, 67);
     font-size: 24px;
-    font-family: 'Homemade Apple', cursive;
+    font-family: 'Questrial', sans-serif;
+}
+
+#subBtn {
+    float:right;
+    margin-top: 0px;
+    font-family: 'Questrial', sans-serif;
 }
 
 #user {
@@ -72,7 +75,6 @@ html{
     font-size: 12px;
 }
 
-
 #navL {
     color:white;
     font-family: 'Questrial', sans-serif;
@@ -84,13 +86,13 @@ html{
 
 .userName {
     font-family: 'Questrial', sans-serif;
-
 }
 
 .btn-secondary {
     margin-top: 10px;
     margin-right: 60px;
 }
+
 .dropdown {
     float:right;
 }

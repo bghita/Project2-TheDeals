@@ -30,7 +30,6 @@
           <!-- header right-side spacer -->
         </div>
       </div>
-
       <!-- Sign in Form -->
       <div class="container">
         <div class="row">
@@ -38,84 +37,64 @@
             <!-- left-side spacer -->
           </div>
           <div class="col-sm-8 col-xs-12 col-md-8" id="signBox">
+            <br>
             <form>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Full Name</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <input type="text" class="form-control" id="name" placeholder="John Doe">
               </div>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Email Address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
               </div>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Password</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                <input type="password" class="form-control" id="password"
+                  placeholder="1-14 numbers or letters; no symbols">
               </div>
               <div class="form-group">
                 <label for="exampleFormControlSelect1">City</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select class="form-control" id="city-selector">
+                  <!-- <option>1</option> -->
+
                 </select>
               </div>
               <div class="form-group">
+                <label for="question-1">
+                  <h4>Interests </h4>
+                </label>
+                <div class="card-body d-flex justify-content-around" id="options">
+                  <button id="local-btn" type="button" class="btn btn-secondary" data-container="body"
+                    data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="lorem">
+                    Local
+                  </button>
 
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
+                  <button id="goods-btn" type="button" class="btn btn-secondary" data-container="body"
+                    data-toggle="popover" data-trigger="hover" data-placement="bottom"
+                    data-content="loremgreghehlglegit">
+                    Goods
+                  </button>
 
-
-
-                    <label for="question-1">
-                      <h4>Interests </h4>
-                    </label>
-                    <div class="card-body" id="options">
-                      <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="q1" id="inlineRadio1" value="1"> Travel
-                        </label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="q1" id="inlineRadio2" value="2"> Goods
-                        </label>
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="q1" id="inlineRadio3" value="3"> Local
-                        </label>
-                      </div>
-
-
-
-                      <br></br>
-
-                      <button type="submit" class="btn btn-primary submit">Submit</button>
+                  <button id="travel-btn" type="button" class="btn btn-secondary" data-container="body"
+                    data-toggle="popover" data-trigger="hover" data-placement="bottom" data-content="lorem">
+                    Travel
+                  </button>
+                </div>
+              </div>
+              <button type="submit" id="subBtn" class="btn btn-primary submit">Submit</button>
             </form>
           </div>
         </div>
-        </p>
       </div>
+
+      <!-- right-side spacer -->
     </div>
   </div>
-  </div>
-  </div>
-
-  <!-- right-side spacer -->
-  </div>
-  </div>
-  <br>
-
-
-
 
   <!-- Javascript -->
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script> -->
+    crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
