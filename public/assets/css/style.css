@@ -13,14 +13,21 @@
     height: 200vh;
 }
 
+
 #main {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
-    height: 260px;
+    height: 200px;
+    color:rgb(28, 184, 67);
+    font-size: 20px;
     background-color: rgba(0, 0, 0, 0.39);
+    font-family: 'Homemade Apple', cursive;
 }
 
-.deals {
+#signBox {
+    box-shadow: 0 0 8px 3px rgb(223, 243, 245);
+    background-color: rgba(255, 255, 255, 0.671);
+    height: 720px;
     color:rgb(28, 184, 67);
     font-size: 24px;
     font-family: 'Homemade Apple', cursive;
