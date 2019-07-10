@@ -6,9 +6,20 @@ const couponFeed = {
         axios.get('https://partner-api.groupon.com/division.json')
             .then(function(response) {
                 let data=[];
-                response.data.divisions.forEach((name) => {
+                response.data.divisions.forEach((each) => {
                     //$('.city-dropdown').text(name.name)
-                    data.push(name.name);
+                    data.push(each.name);
+                })
+                res.json( data)
+            })
+        },
+    citiesID: (req, res) => {
+        axios.get('https://partner-api.groupon.com/division.json')
+            .then(function(response) {
+                let data=[];
+                response.data.divisions.forEach((each) => {
+                    //$('.city-dropdown').text(name.name)
+                    data.push(each.id);
                 })
                 res.json( data)
             })
@@ -19,21 +30,51 @@ const couponFeed = {
     // 
         // req.body
         // field name in HTML needs to match fill ins below:
-        axios.get(`https://partner-api.groupon.com/deals.json?division_id=${req.body.grouponCity}&filters=category:${req.body.grouponCats}&offset=0&limit=50&country_code=US&tsToken=${process.env.TOKEN}`)
-        .then(function (response) {
-            // handle success
-            console.log(response);
-            res.json(response)
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        })
-        // .finally(function () {
-        //     // always executed
-        // })
-    }
-    // radius: needed as number input option in miles between 1 - 100, default is 10.
+        axios.get(`https://partner-api.groupon.com/deals.json?tsToken=${process.env.TOKEN}&division_id=${req.body.grouponCity}&channel_id=${req.body.grouponCats}&offset=0&limit=10`)
+            .then(function (response) {
+                let data=[];
+                response.data.deals.forEach((each) => {
+                    data.push(each.announcementTitle);
+                    data.push(each.dealUrl);
+                    data.push(each.largeImageUrl)
+                })
+                res.json( data);
+
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            // .finally(function () {
+            //     // always executed
+            // })
+        },
+    testCoupons: (req, res) => {
+        // 
+        // This returns 10 max coupons
+        // field name in HTML needs to match fill ins below:
+        axios.get('https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201250_212556_0&division_id=napa-sonoma&channel_id=local&offset=0&limit=10')
+            .then(function (response) {
+                let title=[];
+                let dealUrl=[];
+                let img=[];
+                let group=[title, dealUrl, img];
+                response.data.deals.forEach((each) => {
+                    title.push(each.announcementTitle);
+                    dealUrl.push(each.dealUrl);
+                    img.push(each.largeImageUrl)
+                })
+                res.json(group);
+
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            // .finally(function () {
+            //     // always executed
+            // })
+        }
 }
 
 
