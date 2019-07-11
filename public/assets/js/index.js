@@ -1,12 +1,4 @@
-let citiesID = function() {
-    $.ajax({
-        url: "/api/coupons/cities",
-    }).then( response => {
-        // console.log(response);
-        response.forEach( city => $('#dropdownMenuLink').append($('<option>').text(city)))
-    })
-};
-$('#dropdownMenuLink').change(cities());
+
 
 
 //login page functions
