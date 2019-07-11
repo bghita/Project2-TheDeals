@@ -12,12 +12,14 @@ router.route('/cities')
 router.route('/citiesid')
     .get(couponController.citiesID)
 
+    
 router.route('/coupons')
     .post(couponController.coupons)
-
+    
 router.route('/testcoupons')
-    .get(couponController.testCoupons)
-
-
+    .get(couponController.testCoupons) 
+    
+router.route('/categories')
+    .get(couponController.categoryList)
 
 module.exports = router;

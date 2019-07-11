@@ -1,111 +1,69 @@
 // let grouponCity = "san-francisco";
 // let grouponCat = "Local";
 
-const categoryList = [
-    {
-        name: "Local",
-        subcat_name: [
-            "automotive",
-            "beauty-and-spas",
-            "food-and-drink",
-            "health-and-fitness",
-            "home-improvement",
-            "personal-services",
-            "retail",
-            "things-to-do"
-        ],
-        subcat_show: [
-            "Automotive",
-            "Beauty & Spas",
-            "Food & Drink",
-            "Health & Fitness",
-            "Home Improvement",
-            "Personal Services",
-            "Retail",
-            "Things To Do"
-        ]
-    },
-    {
-        name: "Goods",
-        subcat_name: [
-            "auto-and-home-improvement",
-            "baby-kids-and-toys",	
-            "collectibles",
-            "electronics",
-            "entertainment-and-media",	 
-            "for-the-home",
-            "groceries-household-and-pets",	 
-            "health-and-beauty",
-            "jewelry-and-watches",
-            "mens-clothing-shoes-and-accessories",
-            "sports-and-outdoors",
-            "womens-clothing-shoes-and-accessories"
-        ],
-        subcat_show: [
-            "Auto & Home Improvement",
-            "Baby, Kids & Toys",	
-            "Collectibles",
-            "Electronics",
-            "Entertainment & Media",	 
-            "For The Home",
-            "Groceries, Household, & Pets",	 
-            "Health & Beauty",
-            "Jewelry & Watches",
-            "Men's Clothing, Shoes & Accessories",
-            "Sports & Outdoors",
-            "Women's Clothing, Shoes & Accessories"
-        ]
-    },
-    {
-        name: "Travel",
-        subcat_name: [
-            "cruise-travel",
-            "flights-and-transportation",
-            "hotels-and-accommodations",
-            "tour-travel"
-        ],
-        subcat_show: [
-            "Cruise Travel",
-            "Flights & Transportation",
-            "Hotels & Accommodations",
-            "Tour Travel"
-        ]
-    }
-]
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})
 
 //needs directing -- attr('data-content',___)... VVVVV
+
+$( document ).ready(categories())
+
 function categories() {
     $.ajax({
         url: "/api/coupons/categories"
     }).then( response => {
-        return response;
+        for(let i = 0; i < response.length; i++) {
+            if(response[i].name === "Goods") {
+                $('button#goods-btn').attr('data-content', response[i].subcat_show.join(", "))
+            }
+            if(response[i].name === "Local") {
+                $('button#local-btn').attr('data-content', response[i].subcat_show.join(", "))
+            }
+            
+            if(response[i].name === "Travel") {
+                $('button#travel-btn').attr('data-content', response[i].subcat_show.join(", "))
+            }
+        }
     })
 }
         
-$('#city-selector').change(cities()) 
 
-function cities() {
+let cities = function() {
     $.ajax({
         url: "/api/coupons/cities",
     }).then( response => {
         // console.log(response);
         response.forEach( city => $('#city-selector').append($('<option>').text(city)))
     })
-}
+};
+$('#city-selector').change(cities());
 
-$('#city-select').change(city()) 
 
-function city() {
+let city = function() {
     $.ajax({
         url: "/api/coupons/cities",
     }).then( response => {
         // console.log(response);
         response.forEach( city => $('#city-select').append($('<a>').text(city)))
     })
-}
+};
+
+$('#city-select').change(city());
+
         
 //login page functions
-    //display username after login
+//LOCAL STORAGE
+myStorage = window.localStorage;
+    //username and password from sign-up form page
+const email = document.localStorage.getItem('email');
+const password = document.localStorage.getItem('password');
+    //check if stored data matches input on login form
+btnInsert.onclick = function (){
+    const em = em.value;
+    const pw = pw.value();
+}
+
     //display local deals(10)
 
 //signup page functions
