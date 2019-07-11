@@ -30,27 +30,10 @@
     margin-bottom: 0px;
 }
 
-#signBox {
-    box-shadow: 0 0 8px 3px rgb(223, 243, 245);
-    background-color: rgba(0, 0, 0, 0.39);
-    height: 647px;
-    color:rgb(28, 184, 67);
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.39);
-}
-
 .btn-primary {
     float: right;
     font-size: 24px;
     font-family: 'Questrial', sans-serif;
-}
-
-#subBtn {
-    float:right;
-    margin-top: 0px;
-    font-family: 'Homemade Apple', cursive;
-    font-size: 24px;
-    font-family: 'Homemade Apple', cursive;
 }
 
 #user {
@@ -68,9 +51,6 @@
     background-color: rgba(255, 255, 255, 0.671);
     height: 500px;
     background-color: rgba(0, 0, 0, 0.39);
-    max-width: 555px;
-    font-size: 20px;
-    font-family: 'Rock Salt', cursive;
 }
 
 .form-group {
