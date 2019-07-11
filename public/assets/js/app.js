@@ -39,17 +39,28 @@ let cities = function() {
 };
 $('#city-selector').change(cities());
 
-
-let city = function() {
+let citiesID = function() {
     $.ajax({
         url: "/api/coupons/cities",
     }).then( response => {
         // console.log(response);
-        response.forEach( city => $('#city-select').append($('<a>').text(city)))
+        response.forEach( city => $('#dropdownMenuLink').append($('<option>').text(city)))
     })
 };
+$('#dropdownMenuLink').change(cities());
 
-$('#city-select').change(city());
+
+
+// let city = function() {
+//     $.ajax({
+//         url: "/api/coupons/cities",
+//     }).then( response => {
+//         // console.log(response);
+//         response.forEach( city => $('#city-select').append($('<a>').text(city)))
+//     })
+// };
+
+// $('#city-select').change(city());
 
         
 //login page functions
@@ -71,7 +82,9 @@ btnInsert.onclick = function (){
     //submit button function
 
 //make selection a variable
-
-//
-
-//  You should be making API requests to your routes for data here.
+// $.ajax({
+//     method: 'POST',
+//     data: 
+// }).then(function(data){
+//     console.log(data);
+// })
