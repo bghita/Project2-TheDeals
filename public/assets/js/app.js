@@ -39,17 +39,6 @@ let cities = function() {
 };
 $('#city-selector').change(cities());
 
-let citiesID = function() {
-    $.ajax({
-        url: "/api/coupons/cities",
-    }).then( response => {
-        // console.log(response);
-        response.forEach( city => $('#dropdownMenuLink').append($('<option>').text(city)))
-    })
-};
-$('#dropdownMenuLink').change(cities());
-
-
 
 // let city = function() {
 //     $.ajax({
@@ -62,24 +51,6 @@ $('#dropdownMenuLink').change(cities());
 
 // $('#city-select').change(city());
 
-        
-//login page functions
-//LOCAL STORAGE
-myStorage = window.localStorage;
-    //username and password from sign-up form page
-const email = document.localStorage.getItem('email');
-const password = document.localStorage.getItem('password');
-    //check if stored data matches input on login form
-btnInsert.onclick = function (){
-    const em = em.value;
-    const pw = pw.value();
-}
-
-    //display local deals(10)
-
-//signup page functions
-    //cities dropdown
-    //submit button function
 
 //make selection a variable
 // $.ajax({
