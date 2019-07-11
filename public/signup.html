@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,13 @@
     rel="stylesheet">
   <title>The Deals</title>
 </head>
-
+<body>
+<!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-dark sticky-top">
+        <a class="navbar-brand" id="navL" href="./index.html">
+          <button class="btn btn-outline-success" type="submit">Home</button>
+        </a>
+    </nav>
 <body>
     <div class="background">
         <div class="container">
@@ -30,7 +35,6 @@
                     <!-- header right-side spacer -->
                 </div>
             </div>
-           
             <!-- Sign in Form -->
             <div class="container">
                 <div class="row">
@@ -38,6 +42,7 @@
                         <!-- left-side spacer -->
                     </div>
                     <div class="col-sm-8 col-xs-12 col-md-8" id="signBox">
+                      <br>
                         <form>
                             <div class="form-group">
                               <label for="exampleFormControlInput1">Full Name</label>
@@ -74,9 +79,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <br></br>
-
-                            <button type="submit" class="btn btn-primary submit">Submit</button>
+                            <button type="submit" id="subBtn" class="btn btn-primary submit">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -86,6 +89,10 @@
         </div>
 
     </div>
+    <!-- Footer -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-bottom ">
+        <p class="mx-auto " style="color:rgb(22, 156, 10) ">@CopyRight!</p>>
+    </nav>
     
     <!-- Javascript -->
 
@@ -104,7 +111,5 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="./assets/js/app.js"></script>
-
 </body>
-
 </html>

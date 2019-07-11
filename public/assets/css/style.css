@@ -1,6 +1,4 @@
-html{
-    padding: 0px; 
-}
+
 #head {
     font-family: 'Teko', sans-serif;
     font-size: 140px;
@@ -16,18 +14,7 @@ html{
     height: 200vh;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.img {
-    height: 300px;
-    width: 760px;
-    margin-left: 190px;
-}
 
-=======
->>>>>>> 76937ea40eaeb40c8cb22383d135f2bebbbfaede
-=======
->>>>>>> f839b8ca4a08d8778eb8452e18415df8fefc3945
 #main {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
     background-color: rgba(255, 255, 255, 0.671);
@@ -45,25 +32,25 @@ html{
 
 #signBox {
     box-shadow: 0 0 8px 3px rgb(223, 243, 245);
-    background-color: rgba(255, 255, 255, 0.671);
-    height: 680px;
+    background-color: rgba(0, 0, 0, 0.39);
+    height: 647px;
     color:rgb(28, 184, 67);
-<<<<<<< HEAD
-<<<<<<< HEAD
     font-size: 20px;
     background-color: rgba(0, 0, 0, 0.39);
 }
 
 .btn-primary {
     float: right;
-=======
+    font-size: 24px;
+    font-family: 'Questrial', sans-serif;
+}
+
+#subBtn {
+    float:right;
+    margin-top: 0px;
+    font-family: 'Homemade Apple', cursive;
     font-size: 24px;
     font-family: 'Homemade Apple', cursive;
->>>>>>> 76937ea40eaeb40c8cb22383d135f2bebbbfaede
-=======
-    font-size: 24px;
-    font-family: 'Homemade Apple', cursive;
->>>>>>> f839b8ca4a08d8778eb8452e18415df8fefc3945
 }
 
 #user {
@@ -81,8 +68,6 @@ html{
     background-color: rgba(255, 255, 255, 0.671);
     height: 500px;
     background-color: rgba(0, 0, 0, 0.39);
-<<<<<<< HEAD
-<<<<<<< HEAD
     max-width: 555px;
     font-size: 20px;
     font-family: 'Rock Salt', cursive;
@@ -90,9 +75,6 @@ html{
 
 .form-group {
     font-family: 'Questrial', sans-serif;
-=======
-=======
->>>>>>> f839b8ca4a08d8778eb8452e18415df8fefc3945
 }
 
 .mainCoupons {
@@ -102,22 +84,12 @@ html{
     padding-top: 10px;
     padding-right: 0px;
     padding-left: 0px;
-<<<<<<< HEAD
->>>>>>> 76937ea40eaeb40c8cb22383d135f2bebbbfaede
-=======
->>>>>>> f839b8ca4a08d8778eb8452e18415df8fefc3945
 }
 
 #footing {
     box-shadow: 0 0 8px 3px rgb(196, 232, 235);
     font-size: 12px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f839b8ca4a08d8778eb8452e18415df8fefc3945
 }
-
 
 #navL {
     color:white;
@@ -130,17 +102,13 @@ html{
 
 .userName {
     font-family: 'Questrial', sans-serif;
-
 }
 
 .btn-secondary {
     margin-top: 10px;
     margin-right: 60px;
-<<<<<<< HEAD
->>>>>>> 76937ea40eaeb40c8cb22383d135f2bebbbfaede
-=======
 }
+
 .dropdown {
     float:right;
->>>>>>> f839b8ca4a08d8778eb8452e18415df8fefc3945
 }
