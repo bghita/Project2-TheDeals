@@ -17,6 +17,7 @@ module.exports = {
                const query = "INSERT INTO userinfo (user_name, email, password, city) VALUES(?,?,?,?);"
                 connection.query(query, [name, email, pw, city], function(error, data){
                     if(error) throw error;
+                    console.log("User created");
                     // Either redirect the user or do something you want to do
                     res.send('User created');
                 });

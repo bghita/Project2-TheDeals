@@ -8,6 +8,7 @@ CREATE TABLE userinfo(
     email VARCHAR(255) not null UNIQUE,
     password VARCHAR(255) not null,
     city VARCHAR(255) not null,
+    interest VARCHAR(255) not null,
     PRIMARY KEY(id)
 );
 
