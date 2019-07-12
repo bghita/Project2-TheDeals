@@ -28,21 +28,25 @@ const couponFeed = {
 
     // if("Local")  
     coupons: (req, res) => {
-    // 
         // req.body
         // field name in HTML needs to match fill ins below:
-        axios.get(`https://partner-api.groupon.com/deals.json?tsToken=${process.env.TOKEN}&division_id=${req.body.grouponCity}&channel_id=${req.body.grouponCats}&offset=0&limit=10`)
+        const query = `https://partner-api.groupon.com/deals.json?tsToken=${process.env.TOKEN}&division_id=${req.body.grouponCity}&channel_id=${req.body.grouponCats}&offset=0&limit=10`
+        axios.get(query)
             .then(function (response) {
-                let data=[];
+                let title=[];
+                let dealUrl=[];
+                let img=[];
+                let group=[title, dealUrl, img];
                 response.data.deals.forEach((each) => {
-                    data.push(each.announcementTitle);
-                    data.push(each.dealUrl);
-                    data.push(each.largeImageUrl)
+                    title.push(each.announcementTitle);
+                    dealUrl.push(each.dealUrl);
+                    img.push(each.largeImageUrl)
                 })
-                res.json( data);
+                res.json(group);
 
             })
             .catch(function (error) {
+                console.log("hello")
                 // handle error
                 console.log(error);
             })
@@ -54,7 +58,7 @@ const couponFeed = {
         // 
         // This returns 10 max coupons
         // field name in HTML needs to match fill ins below:
-        axios.get('https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201250_212556_0&division_id=napa-sonoma&channel_id=local&offset=0&limit=10')
+        axios.get('https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201250_212556_0&division_id=asheville&channel_id=local&offset=0&limit=10')
             .then(function (response) {
                 let title=[];
                 let dealUrl=[];

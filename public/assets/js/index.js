@@ -4,7 +4,7 @@ let dropdown = function() {
         url: "/api/coupons/cities",
     }).then( response => {
         // console.log(response);
-        response.forEach( city => $('#city-selector').append($('<option>').text(city)))
+        response.forEach( city => $('#city-selector').append($('<option>').addClass("cityOption").attr("value", city).text(city)))
     })
 };
 // $('#locationBtn').on("click", function(e){
@@ -23,16 +23,45 @@ $('#city-selector').change(dropdown());
 
 
 //api city coupons
-let citycoupon = function() {
+//Once the city is selected in #city-selector, 
+//populate 10 area coupons in the #couponBox
+//couponController.js === testCoupons
+let citycoupon = function(city) {
     $.ajax({
-        url: "/api/coupons/testcoupons",
+        url: "/api/coupons/coupons/",
+        type: "POST",
+        data: {grouponCity:city, grouponCats:"local"}
     }).then( response => {
-        // console.log(response);
-        response.forEach( coupons => $('#city-selector').append($('<option>').text(coupons)))
+       //populate list of coupons based on selected city
+       $("#couponDiv").empty(); 
+        for (let index = 0; index < response[0].length; index++) {
+            //description of coupon
+            const desCoupon = response[0][index]
+            // url of coupon 
+            const urlCoupon= response[1][index]
+            // image of coupon
+            const imgCoupon = response[2][index]
+            // creating my html format 
+            const $row = $("<div>").addClass("row")
+            const $card = $("<div>").addClass("card col-md-10 offset-md-1");
+            const $img = $("<img>").addClass("card-img-top").attr("src",imgCoupon);
+            const $cardBody = $("<div>").addClass("card-body");
+            const $p = $("<p>").addClass("card-text");
+            const $a = $("<a>").attr("href", urlCoupon).attr("target", "_blank").text(desCoupon);
+            // composite the html
+            $row.append($card)
+            $card.append($img, $cardBody)
+            $cardBody.append($p)
+            $p.append($a) 
+            // append to main html 
+            $("#couponDiv").append($row)
+        }
     })
 };
-$('#couponBox').append(citycoupon());
-
+$('#city-selector').change(function(){
+    const city =$(this).val()
+    citycoupon(city)
+});
 
 
 //login page functions
