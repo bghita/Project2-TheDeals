@@ -22,16 +22,27 @@ let dropdown = function() {
 $('#city-selector').change(dropdown());
 
 
+//api city coupons
+let citycoupon = function() {
+    $.ajax({
+        url: "/api/coupons/testcoupons",
+    }).then( response => {
+        // console.log(response);
+        response.forEach( coupons => $('#city-selector').append($('<option>').text(coupons)))
+    })
+};
+$('#couponBox').append(citycoupon());
+
+
+
 //login page functions
 //LOCAL STORAGE
-myStorage = window.localStorage;
-    //username and password from sign-up form page
-const email = document.localStorage.getItem('email');
-const password = document.localStorage.getItem('password');
-    //check if stored data matches input on login form
-btnInsert.onclick = function (){
-    const em = em.value;
-    const pw = pw.value();
-};
-
-console.log("hello");
+// myStorage = window.localStorage;
+//     //username and password from sign-up form page
+// const email = document.localStorage.getItem('email');
+// const password = document.localStorage.getItem('password');
+//     //check if stored data matches input on login form
+// btnInsert.onclick = function (){
+//     const em = em.value;
+//     const pw = pw.value();
+// };
