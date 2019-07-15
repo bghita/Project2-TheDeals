@@ -12,7 +12,9 @@ router.route('/cities')
 router.route('/citiesid')
     .get(couponController.citiesID)
 
-    
+router.route('/couponsdaily')
+    .post(couponController.couponsdaily)
+
 router.route('/coupons')
     .post(couponController.coupons)
     
