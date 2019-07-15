@@ -7,7 +7,7 @@ $(function () {
 
 //needs directing -- attr('data-content',___)... VVVVV
 
-$( document ).ready(categories())
+
 
 function categories() {
     $.ajax({
@@ -62,37 +62,75 @@ $('#travel-btn').on('click', (e) => {
     $('#travel-btn').toggleClass('btn-secondary btn-success');
 })
 
-let interest = [];
+let interestList = [];
 
 $('#subBtn').on('click', (e) => {
     e.preventDefault();
-    if($('.form-control').val() === ""){
+    if(($('.form-control').val() === "") || ($('#city-selector').val() === "") || ($('.form-control').val() === "")) {
         alert("Please fill out form in full");
     }else{
         if($('#local-btn').hasClass('btn-success')) {
-            interest.push('local');
+            interestList.push('local');
         } if($('#goods-btn').hasClass('btn-success')) {
-            interest.push('goods');
+            interestList.push('goods');
         } if($('#travel-btn').hasClass('btn-success')) {
-            interest.push('travel');
+            interestList.push('travel');
         }
         let name = $('#name').val();
         let email = $('#email').val();
         let password = $('#password').val();
         let city = $('#city-selector').val();
+        let interest = interestList.join(", ")
         localStorage.clear();
-        localStorage.setItem("name", name);
-        localStorage.setItem("email", email);
-        localStorage.setItem("password", password)
-        localStorage.setItem("city", city);
-        localStorage.setItem("interest", interest);
-        location.href = 'index.html';
+        // localStorage.setItem("name", name);
+        // localStorage.setItem("email", email);
+        // localStorage.setItem("password", password)
+        // localStorage.setItem("city", city);
+        // localStorage.setItem("interest", interest);
         $.ajax({
             url: "/api/auth/signup",
+            method: "POST",
+            data: {
+                name, // name: name
+                email,
+                password,
+                city,
+                interest
+            }
         }).then( response => {
-            console.log(response);
-            location.href = 'index.html';
+            
+            if(response.success === true) {
+                localStorage.setItem("id", response.id);
+                // profileLoad();
+                location.href = 'index.html';
+            }
         })
     }
 });
 
+const profileLoad = function() {
+    if(parseInt(localStorage.getItem("id")) >= 0) {
+        let entry = parseInt(localStorage.getItem("id"));
+        $('.sign-up-btn').text('New Profile');
+        $('.nav-form-input').addClass("d-none");
+        $('.nav-form')
+            .append(`<p class="user-profile">${name}</p>`)
+            .append(`<button class="btn btn-outline-success sign-out" type="submit">Log Out</button>`);
+        $.ajax({
+            url: "/api/auth/load/"+entry,
+            method: "GET"            
+        }).then( response => {
+            console.log(response);
+            
+        })
+    }
+}
+
+$(document).on('click', ".sign-out", (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    location.href = 'index.html';
+});
+
+$( document ).ready(categories())
+$( document ).ready(profileLoad())
