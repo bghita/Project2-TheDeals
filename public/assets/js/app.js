@@ -48,13 +48,51 @@ let city = function() {
 };
 $('#city-select').change(city());
 
-$('#subBtn').on('click', () => {
-    $.ajax({
-        url: "/api/auth/signup",
-    }).then( response => {
-        response.send("User Created")
-        location.href = 'index.html';
 
-    }).catch((error) => {throw error}); 
+$('#local-btn').on('click', (e) => {
+    e.preventDefault();
+    $('#local-btn').toggleClass('btn-secondary btn-success');
+})
+$('#goods-btn').on('click', (e) => {
+    e.preventDefault();
+    $('#goods-btn').toggleClass('btn-secondary btn-success');
+})
+$('#travel-btn').on('click', (e) => {
+    e.preventDefault();
+    $('#travel-btn').toggleClass('btn-secondary btn-success');
+})
+
+let interest = [];
+
+$('#subBtn').on('click', (e) => {
+    e.preventDefault();
+    if($('.form-control').val() === ""){
+        alert("Please fill out form in full");
+    }else{
+        if($('#local-btn').hasClass('btn-success')) {
+            interest.push('local');
+        } if($('#goods-btn').hasClass('btn-success')) {
+            interest.push('goods');
+        } if($('#travel-btn').hasClass('btn-success')) {
+            interest.push('travel');
+        }
+        let name = $('#name').val();
+        let email = $('#email').val();
+        let password = $('#password').val();
+        let city = $('#city-selector').val();
+        localStorage.clear();
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password)
+        localStorage.setItem("city", city);
+        localStorage.setItem("interest", interest);
+        location.href = 'index.html';
+        $.ajax({
+            url: "/api/auth/signup",
+        }).then( response => {
+            console.log(response);
+            location.href = 'index.html';
+        })
+    }
 });
 
