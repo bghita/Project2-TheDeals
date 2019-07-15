@@ -54,6 +54,34 @@ const couponFeed = {
             //     // always executed
             // })
         },
+        //dailydeal
+    couponsdaily: (req, res) => {
+            // req.body
+            // field name in HTML needs to match fill ins below:
+            const query = `https://partner-api.groupon.com/deals.json?tsToken=${process.env.TOKEN}&division_id=${req.body.grouponCity}&channel_id=${req.body.grouponCats}&offset=0&limit=1`
+            axios.get(query)
+                .then(function (response) {
+                    let title=[];
+                    let dealUrl=[];
+                    let img=[];
+                    let group=[title, dealUrl, img];
+                    response.data.deals.forEach((each) => {
+                        title.push(each.announcementTitle);
+                        dealUrl.push(each.dealUrl);
+                        img.push(each.largeImageUrl)
+                    })
+                    res.json(group);
+    
+                })
+                .catch(function (error) {
+                    console.log("hello")
+                    // handle error
+                    console.log(error);
+                })
+                // .finally(function () {
+                //     // always executed
+                // })
+        },
     testCoupons: (req, res) => {
         // 
         // This returns 10 max coupons
@@ -82,6 +110,8 @@ const couponFeed = {
         },
     categoryList: (req, res) => res.json(categoryList)
 }
+
+
 
 
 module.exports = couponFeed;

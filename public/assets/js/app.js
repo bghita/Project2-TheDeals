@@ -40,16 +40,16 @@ let cities = function() {
 $('#city-selector').change(cities());
 
 
-// let city = function() {
-//     $.ajax({
-//         url: "/api/coupons/cities",
-//     }).then( response => {
-//         // console.log(response);
-//         response.forEach( city => $('#city-select').append($('<a>').text(city)))
-//     })
-// };
+let city = function() {
+    $.ajax({
+        url: "/api/coupons/cities",
+    }).then( response => {
+        // console.log(response);
+        response.forEach( city => $('#city-select').append($('<a>').text(city)))
+    })
+};
 
-// $('#city-select').change(city());
+$('#city-select').change(city());
 
 
 //make selection a variable
