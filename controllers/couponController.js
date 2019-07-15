@@ -58,7 +58,7 @@ const couponFeed = {
     couponsdaily: (req, res) => {
             // req.body
             // field name in HTML needs to match fill ins below:
-            const query = `https://partner-api.groupon.com/deals.json?tsToken=${process.env.TOKEN}&division_id=${req.body.grouponCity}&channel_id=${req.body.grouponCats}&offset=0&limit=1`
+            const query = `https://partner-api.groupon.com/deals.json?tsToken=${process.env.TOKEN}&division_id=${req.body.grouponCity}&channel_id=${req.body.grouponCats}&offset=0&limit=2`
             axios.get(query)
                 .then(function (response) {
                     let title=[];

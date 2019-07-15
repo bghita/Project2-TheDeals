@@ -78,7 +78,7 @@ let dailyDeals = function (daily) {
             // image of coupon
             const dailyImg = response[2][index]
             // creating my html format 
-            const $col = $("<div>").addClass("card col-sm-10")
+            const $col = $("<div>").addClass("card col-sm-5")
             const $img2 = $("<img>").addClass("card-img-top").attr("src", dailyImg);
             const $dailyBody = $("<div>").addClass("card-body");
             const $p2 = $("<p>").addClass("card-text");

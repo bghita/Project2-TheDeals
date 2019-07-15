@@ -24,8 +24,20 @@ module.exports = {
             }
         });
     },
-    login: function(req, res) {
-        // Send the user back once you find it
+    // login: function(req, res) {
+    //     // Send the user back once you find it
+    //     var useremail = req.body.email;
+    //     var userpass = req.body.password;
+    //     connection.query("SELECT email, password FROM userinfo WHERE email = ? && password = ?;", email, function(error, data){
+    //         if (error) throw error;
+    //         console.log(data);
+    //         if (data.length >= 1){
+    //             return res.json({ error: "Invalid email or password"})
+    //         } else{
+    //             //log member in
+
+    //         }
+    //     })
         // grab email and password from req.body
 
         // Query database for email
@@ -34,4 +46,4 @@ module.exports = {
             // if so, send the user back to the front end
             // else send an error saying wrong password
     }
-}
+
