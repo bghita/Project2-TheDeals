@@ -46,7 +46,7 @@ const couponFeed = {
 
             })
             .catch(function (error) {
-                console.log("hello")
+                console.log("hey-oh")
                 // handle error
                 console.log(error);
             })
