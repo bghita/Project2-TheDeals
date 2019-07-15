@@ -98,8 +98,6 @@ let dailyDeals = function (daily) {
     dailyDeals(daily)
 };
 
-
-
 //login page functions
 //LOCAL STORAGE
 // myStorage = window.localStorage;
