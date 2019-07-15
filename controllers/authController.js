@@ -14,7 +14,7 @@ module.exports = {
             if (data.length >= 1) {
                 return res.json({ error: "Email already exists"})
             } else {
-               const query = "INSERT INTO userinfo (user_name, email, password, city) VALUES(?,?,?,?);"
+                const query = "INSERT INTO userinfo (user_name, email, password, city) VALUES(?,?,?,?);"
                 connection.query(query, [name, email, pw, city], function(error, data){
                     if(error) throw error;
                     console.log("User created");
