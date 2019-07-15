@@ -9,8 +9,8 @@ router.route('/signup')
     
 
 // Login in a user and getting their User id
-router.route('/login')
-    .post(authController.login)
+// router.route('/login')
+//     .post(authController.login)
 
 
 
