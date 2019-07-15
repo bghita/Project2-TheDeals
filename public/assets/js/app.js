@@ -46,6 +46,15 @@ let city = function() {
         response.forEach( city => $('#city-select').append($('<a>').text(city)))
     })
 };
-
 $('#city-select').change(city());
+
+$('#subBtn').on('click', () => {
+    $.ajax({
+        url: "/api/auth/signup",
+    }).then( response => {
+        response.send("User Created")
+        location.href = 'index.html';
+
+    }).catch((error) => {throw error}); 
+});
 
