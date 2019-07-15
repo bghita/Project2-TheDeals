@@ -55,7 +55,7 @@ module.exports = {
                 $('.sign-up-btn').text('New Profile');
                 $('.nav-form-input').addClass(d-none);
                 $('.nav-form')
-                    .append(`<p class="user-profile">${profile.name}</p>`)
+                    .append(`<p class="user-profile">${localStorage.getItem("name")}</p>`)
                     .append(`<button class="btn btn-outline-success sign-out" type="submit">Log Out</button>`);
                 
 
