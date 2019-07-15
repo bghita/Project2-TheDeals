@@ -41,10 +41,10 @@ module.exports = {
                 localStorage.clear();
 
                 // Store all content into localStorage
-                localStorage.setItem("name", profile.name);
-                localStorage.setItem("email", profile.email);
-                localStorage.setItem("city", profile.city);
-                localStorage.setItem("interest", profile.interest);
+                // localStorage.setItem("name", profile.name);
+                // localStorage.setItem("email", profile.email);
+                // localStorage.setItem("city", profile.city);
+                // localStorage.setItem("interest", profile.interest);
 
                 // By default display the content from localStorage
                 // $("").text(localStorage.getItem("name"));

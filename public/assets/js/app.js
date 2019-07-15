@@ -91,7 +91,6 @@ $('#subBtn').on('click', (e) => {
             url: "/api/auth/signup",
         }).then( response => {
             console.log(response);
-            location.href = 'index.html';
         })
     }
 });
