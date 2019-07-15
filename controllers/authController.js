@@ -4,18 +4,20 @@ const connection = require('../config/connection.js');
 module.exports = {
     //need names on login form & signup
     signup: function (req, res) {
+        console.log(req.body)
         var name = req.body.name;
         var email = req.body.email;
         var pw = req.body.password;
         var city = req.body.city_selector;
+        var interest = req.body.interest;
         connection.query("SELECT email FROM userinfo WHERE email = ?;", email, function (error, data) {
             if (error) throw error;
             console.log(data);
             if (data.length >= 1) {
                 return res.json({ error: "Email already exists"})
             } else {
-               const query = "INSERT INTO userinfo (user_name, email, password, city) VALUES(?,?,?,?);"
-                connection.query(query, [name, email, pw, city], function(error, data){
+               const query = "INSERT INTO userinfo (user_name, email, password, city, interest) VALUES(?,?,?,?,?);"
+                connection.query(query, [name, email, pw, city, interest], function(error, data){
                     if(error) throw error;
                     console.log("User created");
                     // Either redirect the user or do something you want to do
