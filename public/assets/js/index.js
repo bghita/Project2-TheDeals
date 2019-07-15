@@ -70,6 +70,7 @@ let dailyDeals = function (daily) {
         type: "POST",
         data: { grouponCity: daily, grouponCats: "travel" }
     }).then(response => {
+        console.log(response)
         for (let index = 0; index < response[0].length; index++) {
             //description of coupon
             const dailyDec = response[0][index]
@@ -77,18 +78,30 @@ let dailyDeals = function (daily) {
             const dailyUrl = response[1][index]
             // image of coupon
             const dailyImg = response[2][index]
+
+
             // creating my html format 
-            const $col = $("<div>").addClass("card col-sm-5")
+            const $col = $("<div>").addClass("card col-sm-8 offset-sm-2");
             const $img2 = $("<img>").addClass("card-img-top").attr("src", dailyImg);
             const $dailyBody = $("<div>").addClass("card-body");
             const $p2 = $("<p>").addClass("card-text");
             const $a2 = $("<a>").attr("href", dailyUrl).attr("target", "_blank").text(dailyDec);
+
+
             // composite the html
             $col.append($img2, $dailyBody)
             $dailyBody.append($p2)
             $p2.append($a2)
+
+            let $carouselItem = ''
+            if(index === 0){
+                $carouselItem = $('<div>').addClass('carousel-item active')    
+            } else {
+                $carouselItem = $('<div>').addClass('carousel-item')
+            } 
+            $carouselItem.append($col)
             // append to main html 
-            $("#mainDeals").append($col)
+            $("#mainDeals").append($carouselItem)
         }
     })
 };
@@ -97,8 +110,6 @@ let dailyDeals = function (daily) {
     const daily = "Seattle"
     dailyDeals(daily)
 };
-
-
 
 //login page functions
 //LOCAL STORAGE

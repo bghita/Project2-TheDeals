@@ -46,7 +46,7 @@ const couponFeed = {
 
             })
             .catch(function (error) {
-                console.log("hello")
+                console.log("hey-oh")
                 // handle error
                 console.log(error);
             })
@@ -58,7 +58,8 @@ const couponFeed = {
     couponsdaily: (req, res) => {
             // req.body
             // field name in HTML needs to match fill ins below:
-            const query = `https://partner-api.groupon.com/deals.json?tsToken=${process.env.TOKEN}&division_id=${req.body.grouponCity}&channel_id=${req.body.grouponCats}&offset=0&limit=2`
+            const query = `https://partner-api.groupon.com/deals.json?tsToken=${process.env.TOKEN}&division_id=${req.body.grouponCity}&channel_id=${req.body.grouponCats}&offset=0&limit=4`
+            console.log(query)
             axios.get(query)
                 .then(function (response) {
                     let title=[];
