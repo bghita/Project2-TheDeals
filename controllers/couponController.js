@@ -17,12 +17,16 @@ const couponFeed = {
     citiesID: (req, res) => {
         axios.get('https://partner-api.groupon.com/division.json')
             .then(function(response) {
+                let cities=[];
                 let cityId=[];
+                let citiesComb = [];
                 response.data.divisions.forEach((each) => {
                     //$('.city-dropdown').text(name.name)
+                    cities.push(each.name);
                     cityId.push(each.id);
                 })
-                res.json( cityId)
+                citiesComb.push(cities, cityId)
+                res.json( citiesComb)
             })
         },
 

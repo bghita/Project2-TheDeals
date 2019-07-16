@@ -58,8 +58,8 @@ let citycoupon = function (city) {
     })
 };
 $('#city-selector').change(function () {
-    const city = $(this).val()
-    citycoupon(city)
+    let town = $(this).val()
+    citycoupon(town)
 });
 
 
@@ -70,8 +70,7 @@ let dailyDeals = function (daily) {
         type: "POST",
         data: { grouponCity: daily, grouponCats: "travel" }
     }).then(response => {
-        console.log(response)
-        for (let index = 0; index < response[0].length; index++) {
+        for (let index = 0; index < 3; index++) {
             //description of coupon
             const dailyDec = response[0][index]
             // url of coupon 
@@ -93,7 +92,7 @@ let dailyDeals = function (daily) {
             $dailyBody.append($p2)
             $p2.append($a2)
 
-            let $carouselItem = ''
+            let $carouselItem = '';
             if(index === 0){
                 $carouselItem = $('<div>').addClass('carousel-item active')    
             } else {
@@ -105,11 +104,10 @@ let dailyDeals = function (daily) {
         }
     })
 };
-// $(document).onload(function () {
-    {
-    const daily = "Seattle"
+$(document).ready(function (daily){
+    daily = "Seattle";
     dailyDeals(daily)
-};
+})
 
 //login page functions
 //LOCAL STORAGE
