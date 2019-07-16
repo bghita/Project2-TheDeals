@@ -120,12 +120,52 @@ const profileLoad = function() {
         $.ajax({
             url: "/api/auth/load/"+entry,
             method: "GET"            
-        }).then( response => {
-            console.log(response);
-            name = response[0].user_name;
+        }).then( user => {
+            console.log(user);
+            name = user[0].user_name;
             $('.nav-form')
-                .append(`<p class="user-profile userName text-success px-2 my-auto"><ion-icon name="cash" class="md hydrated mx-1 my-auto"></ion-icon>${name}</p>`)
-                .append(`<button class="btn btn-outline-success sign-out" type="submit">Log Out</button>`);
+            .append(`<p class="user-profile userName text-success px-2 my-auto"><ion-icon name="cash" class="md hydrated mx-1 my-auto"></ion-icon>${name}</p>`)
+            .append(`<button class="btn btn-outline-success sign-out" type="submit">Log Out</button>`);
+            
+            let city = user[0].city;
+            $('#city-selector option').attr('selected disabled value', city)
+
+            let cats = user[0].interest.split(", ").join("&channel_id=");
+            let cityCoupon = function (city) {
+                $.ajax({
+                    url: "/api/coupons/coupons/",
+                    type: "POST",
+                    data: { grouponCity: city, grouponCats: cats }
+                }).then(coupons => {
+                    //populate list of coupons based on selected city
+                    $("#couponDiv").empty();
+                    for (let index = 0; index < coupons[0].length; index++) {
+                        //description of coupon
+                        const desCoupon = coupons[0][index]
+                        // url of coupon 
+                        const urlCoupon = coupons[1][index]
+                        // image of coupon
+                        const imgCoupon = coupons[2][index]
+                        // creating my html format 
+                        const $row = $("<div>").addClass("row")
+                        const $card = $("<div>").addClass("card col-md-10 offset-md-1");
+                        const $img = $("<img>").addClass("card-img-top").attr("src", imgCoupon);
+                        const $cardBody = $("<div>").addClass("card-body");
+                        const $p = $("<p>").addClass("card-text");
+                        const $a = $("<a>").attr("href", urlCoupon).attr("target", "_blank").text(desCoupon);
+                        // composite the html
+                        $row.append($card)
+                        $card.append($img, $cardBody)
+                        $cardBody.append($p)
+                        $p.append($a)
+                        // append to main html 
+                        $("#couponDiv").append($row)
+                    }
+                })
+            };
+
+            cityCoupon();
+            
             
         })
     }
