@@ -9,7 +9,7 @@ router.route('/signup')
     
 // Login in a user and getting their User id
 router.route('/login')
-    .get(authController.login)
+    .post(authController.login)
 
 router.route('/load/:id')
     .get(authController.load)

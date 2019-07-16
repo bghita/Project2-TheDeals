@@ -62,6 +62,10 @@ $('#travel-btn').on('click', (e) => {
     $('#travel-btn').toggleClass('btn-secondary btn-success');
 })
 
+let id = "";
+let name = "";
+let email = "";
+let password = "";
 let interestList = [];
 
 $('#subBtn').on('click', (e) => {
@@ -76,9 +80,9 @@ $('#subBtn').on('click', (e) => {
         } if($('#travel-btn').hasClass('btn-success')) {
             interestList.push('travel');
         }
-        let name = $('#name').val();
-        let email = $('#email').val();
-        let password = $('#password').val();
+        name = $('#name').val();
+        email = $('#email').val();
+        password = $('#password').val();
         let city = $('#city-selector').val();
         let interest = interestList.join(", ")
         localStorage.clear();
@@ -113,18 +117,44 @@ const profileLoad = function() {
         let entry = parseInt(localStorage.getItem("id"));
         $('.sign-up-btn').text('New Profile');
         $('.nav-form-input').addClass("d-none");
-        $('.nav-form')
-            .append(`<p class="user-profile">${name}</p>`)
-            .append(`<button class="btn btn-outline-success sign-out" type="submit">Log Out</button>`);
         $.ajax({
             url: "/api/auth/load/"+entry,
             method: "GET"            
         }).then( response => {
             console.log(response);
+            name = response[0].user_name;
+            $('.nav-form')
+                .append(`<p class="user-profile userName text-success px-2 my-auto"><ion-icon name="cash" class="md hydrated mx-1 my-auto"></ion-icon>${name}</p>`)
+                .append(`<button class="btn btn-outline-success sign-out" type="submit">Log Out</button>`);
             
         })
     }
 }
+
+
+
+$(document).on('click', ".log-in", (e) => {
+    let email = $('.email').val();
+    let password = $('.password').val();
+
+    e.preventDefault();
+    $.ajax({
+        url: "/api/auth/login/",
+        method: "POST",
+        data:  {
+            email,
+            password
+        }           
+    }).then( response => {
+        console.log(response);
+        id = response.data[0].id;
+        name = response.data[0].id;
+        localStorage.setItem('id', id);
+        localStorage.setItem('name', name)
+        location.href = 'index.html';        
+    })
+})
+
 
 $(document).on('click', ".sign-out", (e) => {
     e.preventDefault();

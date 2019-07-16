@@ -42,43 +42,16 @@ module.exports = {
         // Send the user back once you find it
         var useremail = req.body.email;
         var userpass = req.body.password;
-        connection.query("SELECT email, password FROM userinfo WHERE email = ? AND password = ?;", [useremail, userpass], function(error, data){
+        var query = connection.query("SELECT id, user_name, email, password FROM userinfo WHERE email = ? AND password = ?;", [useremail, userpass], function(error, data){
+            console.log(query.sql)
             if (error) throw error;
             console.log(data);
             if (data.length >= 1){
-                return res.json({ error: "Invalid email or password"})
+                return res.json({ data})
             } else{
                 //log member in
-                let profile = res.json(data)
-                
-                // Clear localStorage
-                localStorage.clear();
-
-                // Store all content into localStorage
-                // localStorage.setItem("name", profile.name);
-                // localStorage.setItem("email", profile.email);
-                // localStorage.setItem("city", profile.city);
-                // localStorage.setItem("interest", profile.interest);
-
-                // By default display the content from localStorage
-                // $("").text(localStorage.getItem("name"));
-                // $("").text(localStorage.getItem("email"));
-                // $("").text(localStorage.getItem("city"));
-                // $("").text(localStorage.getItem("interest"));
-
-                $('.sign-up-btn').text('New Profile');
-                $('.nav-form-input').addClass(d-none);
-                $('.nav-form')
-                    .append(`<p class="user-profile">${localStorage.getItem("name")}</p>`)
-                    .append(`<button class="btn btn-outline-success sign-out" type="submit">Log Out</button>`);
-                
-
-                console.log("User Logged In");
-                // Either redirect the user or do something you want to do
-                console.log(data);
-             
-
-            
+                console.log(res.json({error: true}));
+                console.log("User Logged In");            
             }
         })
         // grab email and password from req.body
