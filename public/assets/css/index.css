@@ -18,6 +18,7 @@
     font-size: 24px;
     background-color: rgba(0, 0, 0, 0.39);
     font-family: 'Questrial', sans-serif;
+    height: 400px;
 }
 .deals {
     text-align: center;
@@ -76,4 +77,10 @@
 }
 .dropdown {
     float:right;
+}
+.carousel-inner {
+    height: 300px;
+}
+.card-img-top {
+    height: 200px;
 }

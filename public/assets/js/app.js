@@ -131,8 +131,6 @@ const profileLoad = function() {
     }
 }
 
-
-
 $(document).on('click', ".log-in", (e) => {
     let email = $('.email').val();
     let password = $('.password').val();

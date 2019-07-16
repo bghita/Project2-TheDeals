@@ -30,12 +30,6 @@
         </div>
     </nav>
 
-    <!-- Username + Favorites Button-->
-    <!-- <p class="userName">USERNAME</p>
-            <div class="star">
-                <button type="button" class="btn btn-outline-success">
-                    <ion-icon name="star-outline"></ion-icon>Favorites
-                </button> -->
     <!-- Main Container -->
     <div class="container-fluid background">
         <div class="row">
@@ -72,71 +66,59 @@
         <!-- Deals of the Day -->
         <div class="row">
             <div class="col-md-6 offset-md-3 pb-4 " id="main">
-                <div class="row mt-4 ml-2" id="mainDeals">
-                    <!-- <div class="card col-sm-3">
-                        <img src="#" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Example</p>
+                    <div class="row mt-4">
+                            <div class="col-md-12">
+                                <p class="deals">Deal$ of the Day</p>
+                            </div>
                         </div>
-                    </div> -->
-                    <!-- <div class="card col-sm-3">
-                        <img src="#" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Example</p>
-                        </div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" id="mainDeals">
                     </div>
-                    <div class="card col-sm-3">
-                        <img src="#" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">Example</p>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <p class="deals">Deal$ of the Day</p>
-                    </div>
+                    <br>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </div>
         <br>
-        <!-- Coupons Near Me -->
-        <div class="row">
-            <div class="col-md-6 offset-md-3 overflow-auto" id="couponBox">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p class="mainCoupons">Coupons Near Me!</p>
-                    </div>
-                    <!-- Location Button -->
-                    <div class="col-sm-6">
-                        <!-- <div class="dropdown" >
-                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <ion-icon name="locate"></ion-icon>Location
-
-                                </a>
-                                <div class="dropdown-menu" id="dropdown" aria-labelledby="dropdownMenuLink">
-                                    
-                                </div>
-                            </div> -->
-                        <div class="form-group btn btn-secondary" id="locationBtn" data-toggle="off">
-                            <label for="exampleFormControlSelect1">
-                                <ion-icon name="locate"></ion-icon>Location
-                            </label>
-                            <select class="form-control" id="city-selector">
-                                <option selected disabled value="San Francisco"> Select City </option>
-                                <!-- <option>1</option> -->
-                            </select>
-                        </div>
-                    </div>
+    <!-- Coupons Near Me -->
+    <div class="row">
+        <div class="col-md-6 offset-md-3 overflow-auto" id="couponBox">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p class="mainCoupons">Coupons Near Me!</p>
                 </div>
-                <!-- Coupon Search Box -->
-                <div class="row" style="border:padding 2%;">
-                    <div class="col-md-12" id="couponDiv">
+                <!-- Location Button -->
+                <div class="col-sm-6">
+                    <div class="form-group btn btn-secondary" id="locationBtn" data-toggle="off">
+                        <label for="exampleFormControlSelect1">
+                            <ion-icon name="locate"></ion-icon>Location
+                        </label>
+                        <select class="form-control" id="city-selector">
+                            <option selected disabled value="San Francisco"> Select City </option>
+                            <!-- <option>1</option> -->
+                        </select>
                     </div>
                 </div>
             </div>
+            <!-- Coupon Search Box -->
+            <div class="row" style="border:padding 2%;">
+                <div class="col-md-12" id="couponDiv">
+                </div>
+            </div>
         </div>
+    </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-bottom ">
         <p class="mx-auto " style="color:rgb(22, 156, 10) ">@CopyRight!</p>>
