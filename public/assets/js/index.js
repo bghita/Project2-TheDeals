@@ -58,8 +58,8 @@ let citycoupon = function (city) {
     })
 };
 $('#city-selector').change(function () {
-    const city = $(this).val()
-    citycoupon(city)
+    let town = $(this).val()
+    citycoupon(town)
 });
 
 

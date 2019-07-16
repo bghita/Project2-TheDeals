@@ -12,41 +12,41 @@ $(function () {
 function categories() {
     $.ajax({
         url: "/api/coupons/categories"
-    }).then( response => {
-        for(let i = 0; i < response.length; i++) {
-            if(response[i].name === "Goods") {
+    }).then(response => {
+        for (let i = 0; i < response.length; i++) {
+            if (response[i].name === "Goods") {
                 $('button#goods-btn').attr('data-content', response[i].subcat_show.join(", "))
             }
-            if(response[i].name === "Local") {
+            if (response[i].name === "Local") {
                 $('button#local-btn').attr('data-content', response[i].subcat_show.join(", "))
             }
-            
-            if(response[i].name === "Travel") {
+
+            if (response[i].name === "Travel") {
                 $('button#travel-btn').attr('data-content', response[i].subcat_show.join(", "))
             }
         }
     })
 }
-        
 
-let cities = function() {
+
+let cities = function () {
     $.ajax({
         url: "/api/coupons/cities",
-    }).then( response => {
-        response.forEach( city => $('#city-selector').append($('<option>').text(city)))
+    }).then(response => {
+        response.forEach(city => $('#city-selector').append($('<option>').text(city)))
     })
 };
 $('#city-selector').change(cities());
 
 
-let city = function() {
-    $.ajax({
-        url: "/api/coupons/cities",
-    }).then( response => {
-        response.forEach( city => $('#city-select').append($('<a>').text(city)))
-    })
-};
-$('#city-select').change(city());
+// let location = function() {
+//     $.ajax({
+//         url: "/api/coupons/cities",
+//     }).then( response => {
+//         response.forEach( city => $('#city-select').append($('<a>').text(city)))
+//     })
+// };
+// $('#city-select').change(location());
 
 
 $('#local-btn').on('click', (e) => {
@@ -66,24 +66,26 @@ let id = "";
 let name = "";
 let email = "";
 let password = "";
+var city = "";
+let cats = "";
 let interestList = [];
 
 $('#subBtn').on('click', (e) => {
     e.preventDefault();
-    if(($('.form-control').val() === "") || ($('#city-selector').val() === "") || ($('.form-control').val() === "")) {
+    if (($('.form-control').val() === "") || ($('#city-selector').val() === "") || ($('.form-control').val() === "")) {
         alert("Please fill out form in full");
-    }else{
-        if($('#local-btn').hasClass('btn-success')) {
+    } else {
+        if ($('#local-btn').hasClass('btn-success')) {
             interestList.push('local');
-        } if($('#goods-btn').hasClass('btn-success')) {
+        } if ($('#goods-btn').hasClass('btn-success')) {
             interestList.push('goods');
-        } if($('#travel-btn').hasClass('btn-success')) {
+        } if ($('#travel-btn').hasClass('btn-success')) {
             interestList.push('travel');
         }
         name = $('#name').val();
         email = $('#email').val();
         password = $('#password').val();
-        let city = $('#city-selector').val();
+        city = $('#city-selector').val();
         let interest = interestList.join(", ")
         localStorage.clear();
         // localStorage.setItem("name", name);
@@ -95,15 +97,15 @@ $('#subBtn').on('click', (e) => {
             url: "/api/auth/signup",
             method: "POST",
             data: {
-                name, // name: name
+                name,
                 email,
                 password,
                 city,
                 interest
             }
-        }).then( response => {
-            
-            if(response.success === true) {
+        }).then(response => {
+
+            if (response.success === true) {
                 localStorage.setItem("id", response.id);
                 // profileLoad();
                 location.href = 'index.html';
@@ -112,62 +114,72 @@ $('#subBtn').on('click', (e) => {
     }
 });
 
-const profileLoad = function() {
-    if(parseInt(localStorage.getItem("id")) >= 0) {
+let coupons = function (city, cat) {
+    console.log("made it this far.")
+    console.log(city);
+    $.ajax({
+        url: "/api/coupons/coupons/",
+        type: "POST",
+        data: { grouponCity: city, grouponCats: cat }
+    }).then(coupon => {
+        console.log(coupon)
+        //populate list of coupons based on selected city
+        $("#couponDiv").empty();
+        for (let i = 0; i < coupon[0].length; i++) {
+            //description of coupon
+            const desCoupon = coupon[0][i];
+            // url of coupon 
+            const urlCoupon = coupon[1][i];
+            // image of coupon
+            const imgCoupon = coupon[2][i];
+            // creating my html format 
+            const $row = $("<div>").addClass("row")
+            const $card = $("<div>").addClass("card col-md-10 offset-md-1");
+            const $img = $("<img>").addClass("card-img-top").attr("src", imgCoupon);
+            const $cardBody = $("<div>").addClass("card-body");
+            const $p = $("<p>").addClass("card-text");
+            const $a = $("<a>").attr("href", urlCoupon).attr("target", "_blank").text(desCoupon);
+            // composite the html
+            $row.append($card)
+            $card.append($img, $cardBody)
+            $cardBody.append($p)
+            $p.append($a)
+            // append to main html 
+            $("#couponDiv").append($row)
+        }
+    })
+}
+
+const profileLoad = function () {
+    if (parseInt(localStorage.getItem("id")) > -1) {
         let entry = parseInt(localStorage.getItem("id"));
         $('.sign-up-btn').text('New Profile');
         $('.nav-form-input').addClass("d-none");
+        // $('.user-location').addClass("d-none");
         $.ajax({
-            url: "/api/auth/load/"+entry,
-            method: "GET"            
-        }).then( user => {
-            console.log(user);
+            url: "/api/auth/load/" + entry,
+            method: "GET"
+        }).then(user => {
             name = user[0].user_name;
             $('.nav-form')
-            .append(`<p class="user-profile userName text-success px-2 my-auto"><ion-icon name="cash" class="md hydrated mx-1 my-auto"></ion-icon>${name}</p>`)
-            .append(`<button class="btn btn-outline-success sign-out" type="submit">Log Out</button>`);
-            
-            let city = user[0].city;
-            $('#city-selector option').attr('selected disabled value', city)
+                .append(`<p class="user-profile userName text-success px-2 my-auto"><ion-icon name="cash" class="md hydrated mx-1 my-auto"></ion-icon>${name}</p>`)
+                .append(`<button class="btn btn-outline-success sign-out" type="submit">Log Out</button>`);
 
-            let cats = user[0].interest.split(", ").join("&channel_id=");
-            let cityCoupon = function (city) {
-                $.ajax({
-                    url: "/api/coupons/coupons/",
-                    type: "POST",
-                    data: { grouponCity: city, grouponCats: cats }
-                }).then(coupons => {
-                    //populate list of coupons based on selected city
-                    $("#couponDiv").empty();
-                    for (let index = 0; index < coupons[0].length; index++) {
-                        //description of coupon
-                        const desCoupon = coupons[0][index]
-                        // url of coupon 
-                        const urlCoupon = coupons[1][index]
-                        // image of coupon
-                        const imgCoupon = coupons[2][index]
-                        // creating my html format 
-                        const $row = $("<div>").addClass("row")
-                        const $card = $("<div>").addClass("card col-md-10 offset-md-1");
-                        const $img = $("<img>").addClass("card-img-top").attr("src", imgCoupon);
-                        const $cardBody = $("<div>").addClass("card-body");
-                        const $p = $("<p>").addClass("card-text");
-                        const $a = $("<a>").attr("href", urlCoupon).attr("target", "_blank").text(desCoupon);
-                        // composite the html
-                        $row.append($card)
-                        $card.append($img, $cardBody)
-                        $cardBody.append($p)
-                        $p.append($a)
-                        // append to main html 
-                        $("#couponDiv").append($row)
+            $.ajax({
+                url: "api/coupons/citiesID",
+                method: "GET"
+            }).then(cityId => {
+                // console.log(cityId)
+                for (let i = 0; i < cityId[0].length; i++) {
+                    if (cityId[0][i] === user[0].city) {
+                        city = cityId[1][i];
                     }
-                })
-            };
-
-            cityCoupon();
-            
-            
-        })
+                }
+                $('#city-selector option').val(city);
+                cats = user[0].interest.split(", ").join("&channel_id=");
+                coupons(city, cats);
+            })
+        });
     }
 }
 
@@ -179,17 +191,17 @@ $(document).on('click', ".log-in", (e) => {
     $.ajax({
         url: "/api/auth/login/",
         method: "POST",
-        data:  {
+        data: {
             email,
             password
-        }           
-    }).then( response => {
+        }
+    }).then(response => {
         console.log(response);
         id = response.data[0].id;
         name = response.data[0].id;
         localStorage.setItem('id', id);
         localStorage.setItem('name', name)
-        location.href = 'index.html';        
+        location.href = 'index.html';
     })
 })
 
@@ -200,5 +212,5 @@ $(document).on('click', ".sign-out", (e) => {
     location.href = 'index.html';
 });
 
-$( document ).ready(categories())
-$( document ).ready(profileLoad())
+$(document).ready(categories())
+$(document).ready(profileLoad())

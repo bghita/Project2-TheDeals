@@ -11,6 +11,10 @@ router.route('/signup')
 router.route('/login')
     .post(authController.login)
 
+// future update feature route:
+// router.route('/update')
+//     .update(authController.update)
+
 router.route('/load/:id')
     .get(authController.load)
 
