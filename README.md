@@ -29,19 +29,20 @@
 
 # Built With
 
-<strong> 1. HTML5 </strong>
-<br> </br>
-<strong> 2. CSS3 </strong>
-<br> </br>
-<strong> 3. Javascript </strong>
-<br> </br>
-<strong> 4. Bootstrap Framework </strong>
-<br> </br>
-<strong> 5. JQuery </strong>
-<br> </br>
-<strong> 6. MySQL </strong>
-<br> </br>
-<strong> 7. Heroku </strong>
+
+<p> 1. HTML5 </p>
+
+<p> 2. CSS3 </p>
+
+<p> 3. Javascript </p>
+
+<p> 4. Bootstrap Framework </p>
+
+<p> 5. JQuery </p>
+
+<p> 6. MySQL </p>
+
+<p> 7. Heroku <p>
 
 
   
