@@ -14,4 +14,15 @@
 ![signup](https://user-images.githubusercontent.com/50473646/61344345-d302f500-a805-11e9-8b2a-6229600fcb27.png)
 
 <strong> HOW DO I SIGN UP, AND ISN'T IT A HASSLE? </strong>
-<p> Our app makes signing up a breeze, and the benefits obtained through doing so, are undeniable. All that's needed from you, is to enter your Full Name, Email Address, Password (parameters are provided in text box); along with choosing a City--which is usually the principal city in your region (can also be changed at any time if necessary), and interests. There are three "Interest" boxes to choose from; Local, Goods, and Travel, hovering over a box reveals subcategories exclusive to that box. This way, you can determine which box or boxes to click on as you designate your interests. For instance, if you're interested in "Goods" and "Travel", coupons associated with these categories will appear.   </p>
+<p> Our app makes signing up a breeze, and the benefits obtained through doing so, are undeniable. All that's needed from you, is to: 
+  <br> </br>
+<strong> 1. Enter your Full Name </strong>
+  <br> </br>
+<strong> 2. Your Email Address </strong>
+  <br> </br>
+<strong> 3. Your Password (parameters are provided in text box)</b>
+  <br> </br>
+<strong> 4. Choose your City </strong>usually the principal city in your region *(can also be changed at any time if necessary)* 
+  <br> </br>
+<strong> 5. Choose your Interests</strong> 
+<i>There are three "Interest" boxes to choose from; Local, Goods, and Travel, hovering over a box reveals subcategories exclusive to that box. This way, you can determine which box or boxes to click on as you designate your interests. For instance, if you're interested in "Goods" and "Travel", coupons associated with these categories will appear.</i>   </p>
