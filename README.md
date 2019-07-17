@@ -8,9 +8,10 @@
 ![homepage](https://user-images.githubusercontent.com/50473646/61344343-d1393180-a805-11e9-83af-b25ee1fed7cc.png)
 
 <strong>HOW TO FIND YOUR COUPONS!!! </strong>
-<p> On the homepage, the first thing you're likely to notice, is a box designated for "Deals of the Day". This is where you find the day's finest deals. Beneath this box, a you will notice a drop-down box indicating "location". Here you are given the option of choosing from 150 various municipalities throughout the United States and Canada. Coupons will be generated according the the location you select. This assures you that you'll never have to travel too far, to cash in on premier prices. Whether you're chilling at home, or on vacation across the country, our app is here for you! </p>
+<p> On the homepage, the first thing you're likely to notice, is a box designated for "Deals of the Day". This is where you find the day's finest deals. Beneath this box, you will notice a drop-down box indicating "location". Here you are given the option of choosing from 150 various municipalities throughout the United States and Canada. Coupons will be generated according the the location you select. This assures you that you'll never have to travel too far, to cash in on premier prices. Whether you're chilling at home, or on vacation across the country, our app is always here for you! </p>
 
 # Sign-up 
 ![signup](https://user-images.githubusercontent.com/50473646/61344345-d302f500-a805-11e9-8b2a-6229600fcb27.png)
 
-<p> regertghrtgrtg</p>
+<strong> HOW DO I SIGN UP, AND ISN'T IT A HASSLE? </strong>
+<p> Our app makes signing up a breeze, and the benefits obtained through doing so, are undeniable. All that's needed from you, is to enter your Full Name, Email Address, Password (parameters are provided in text box); along with choosing a City--which is usually the principal city in your region (can also be changed at any time if necessary), and interests. There are three "Interest" boxes to choose from; Local, Goods, and Travel, hovering over a box reveals subcategories exclusive to that box. This way, you can determine which box or boxes to click on as you designate your interests. For instance, if you're interested in "Goods" and "Travel", coupons associated with these categories will appear.   </p>
