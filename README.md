@@ -6,5 +6,11 @@
 
 # Homepage 
 ![homepage](https://user-images.githubusercontent.com/50473646/61344343-d1393180-a805-11e9-83af-b25ee1fed7cc.png)
+
+<strong>HOW TO FIND YOUR COUPONS!!! </strong>
+<p> On the homepage, the first thing you're likely to notice, is a box designated for "Deals of the Day". This is where you find the day's finest deals. Beneath this box, a you will notice a drop-down box indicating "location". Here you are given the option of choosing from 150 various municipalities throughout the United States and Canada. Coupons will be generated according the the location you select. This assures you that you'll never have to travel too far, to cash in on premier prices. Whether you're chilling at home, or on vacation across the country, our app is here for you! </p>
+
 # Sign-up 
 ![signup](https://user-images.githubusercontent.com/50473646/61344345-d302f500-a805-11e9-8b2a-6229600fcb27.png)
+
+<p> regertghrtgrtg</p>
